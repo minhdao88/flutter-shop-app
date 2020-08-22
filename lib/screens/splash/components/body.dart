@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/size_config.dart';
+import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 
 import '../../../components/default_button.dart';
 import '../components/splash_content.dart';
@@ -16,7 +17,7 @@ class _BodyState extends State<Body> {
   List<Map<String, String>> splashData = [
     {
       "image": "assets/images/splash_1.png" ,
-      "text": "Welcome to Tokoto, Let's shop!"
+      "text": "Welcome to Demo Shop, Let's shop!"
     },
     {
       "image": "assets/images/splash_2.png" ,
@@ -68,7 +69,9 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 3),
                     DefaultButton(
                       text: 'Continue',
-                      press: () {}
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      }
                     ),
                     Spacer()
                   ]

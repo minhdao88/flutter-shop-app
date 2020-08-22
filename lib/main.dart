@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/constants.dart';
 import 'package:shop_app/routes.dart';
+import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
+import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
+import 'package:shop_app/theme.dart';
 
 
 void main() {
@@ -12,20 +14,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    var materialApp = MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Multi",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      initialRoute: SplashScreen.routeName,
+      theme: theme(),
+      initialRoute: SignInScreen.routeName,
       routes: routes,
     );
+    return materialApp;
   }
 }
+
+
