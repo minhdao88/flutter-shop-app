@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/size_config.dart';
 import 'package:shop_app/components/default_button.dart';
-import 'package:shop_app/screens/sign_in/components/custom_suffix_icon.dart';
-import 'package:shop_app/screens/sign_in/components/form_error.dart';
 import 'package:shop_app/screens/sign_in/components/no_account_text.dart';
 
 
@@ -26,8 +25,6 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         children: [
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
-          FormErrors(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: "Continue",
             press: () {
@@ -48,29 +45,15 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (value.isNotEmpty &&
-            emailValidatorRegExp.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
-        }
+        _formKey.currentState.validate();
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
+          return kEmailNullError;
         } else if (value.isNotEmpty &&
             !emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
+          return kInvalidEmailError;
         }
         return null;
       },

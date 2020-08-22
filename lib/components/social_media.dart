@@ -3,6 +3,34 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/size_config.dart';
 
 
+class SocialMedia extends StatelessWidget {
+  const SocialMedia({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SocialIcon(
+          icon: 'assets/icons/facebook-2.svg',
+          press: () {},
+        ),
+        SocialIcon(
+          icon: 'assets/icons/google-icon.svg',
+          press: () {},
+        ),
+        SocialIcon(
+          icon: 'assets/icons/twitter.svg',
+          press: () {},
+        )
+      ]
+    );
+  }
+}
+
+
 class SocialIcon extends StatelessWidget {
   const SocialIcon({
     Key key, this.icon, this.press,

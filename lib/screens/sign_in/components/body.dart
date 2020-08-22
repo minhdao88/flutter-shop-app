@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/components/social_media.dart';
 import 'package:shop_app/size_config.dart';
 import 'package:shop_app/constants.dart';
 import 'signin_form.dart';
-import 'social_icon.dart';
 import 'no_account_text.dart';
 
 
@@ -32,23 +32,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignInForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcon(
-                      icon: 'assets/icons/facebook-2.svg',
-                      press: () {},
-                    ),
-                    SocialIcon(
-                      icon: 'assets/icons/google-icon.svg',
-                      press: () {},
-                    ),
-                    SocialIcon(
-                      icon: 'assets/icons/twitter.svg',
-                      press: () {},
-                    )
-                  ]
-                ),
+                SocialMedia(),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 NoAccountText()
               ],
@@ -59,5 +43,6 @@ class Body extends StatelessWidget {
     );
   }
 }
+
 
 
