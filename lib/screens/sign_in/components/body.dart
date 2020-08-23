@@ -21,10 +21,9 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
                   'Welcome Back',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: getProportionateScreenWidth(28)),
+                  style: headingStyle
                 ),
+                SizedBox(height: getProportionateScreenHeight(10)),
                 Text(
                   "Sign in with your email and password \n or continue with social",
                   textAlign: TextAlign.center,

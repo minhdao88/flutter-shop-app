@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/size_config.dart';
+import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
 
 
 class SignupForm extends StatefulWidget {
@@ -46,7 +46,7 @@ class _SignupFormState extends State<SignupForm> {
             text: "Continue",
             press: () {
               if (_formKey.currentState.validate()) {
-                // process sign up
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             }
           )

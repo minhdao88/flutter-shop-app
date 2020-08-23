@@ -24,7 +24,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           buildEmailFormField(),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
             text: "Continue",
             press: () {

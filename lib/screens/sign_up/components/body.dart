@@ -21,13 +21,9 @@ class Body extends StatelessWidget {
                 Text(
                   "Register Account",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black
-                  ),
+                  style: headingStyle
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: getProportionateScreenHeight(10)),
                 Text(
                   "Register your information or continue \n with social media",
                   textAlign: TextAlign.center,

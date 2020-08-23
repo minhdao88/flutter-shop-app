@@ -3,17 +3,17 @@ import 'package:shop_app/size_config.dart';
 import 'components/body.dart';
 
 
-class ForgotPasswordScreen extends StatelessWidget {
-  static String routeName = '/forgot_password';
+class CompleteProfileScreen extends StatelessWidget {
+  static String routeName = '/complete_profile';
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forgot Password')
+        title: Text("Sign up")
       ),
-      body: Body(),
+      body: Body()
     );
   }
 }
